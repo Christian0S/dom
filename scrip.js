@@ -4,7 +4,9 @@ const createTask = (evento) => {
     evento.preventDefault();
     let input = document.querySelector("[data-from-input]");
     const value = input.value;
-    const task = document.querySelector("[data-task]");
+    const list = document.querySelector("[data-list]");
+    const task = document.createElement("li");
+    task.classList.add('card');
     input.value = '';
     const content = ` <div>
     <i class="far fa-check-square icon"></i>
@@ -12,6 +14,8 @@ const createTask = (evento) => {
     </div>
     <i class="fas fa-trash-alt trashIcon icon"></i>`
     task.innerHTML = content;
+
+    list.appendChild(task);
     console.log(task);
 
 };
